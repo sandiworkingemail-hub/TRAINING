@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page Shopee Style</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    /* Header */
+    .navbar {
+      background: #f94f2b; /* warna oranye Shopee */
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo {
+      color: white;
+      flex: 1;
+    }
+    .navbar input {
+      padding: 8px;
+      flex: 2;
+      border: none;
+      border-radius: 4px;
+    }
+    .btn-search {
+      background: white;
+      border: none;
+      padding: 8px 15px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* Banner */
+    .banner {
+      background: linear-gradient(90deg, #ff6a3d, #ff914d);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .btn-cta {
+      background: white;
+      color: #f94f2b;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Kategori */
+    .kategori {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .kategori .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-weight: bold;
+    }
+
+    /* Produk */
+    .produk {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .produk .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .produk-card {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .produk-card img {
+      width: 100%;
+      border-radius: 6px;
+    }
+    .produk-card p {
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    .produk-card span {
+      color: #f94f2b;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="navbar">
+    <h1 class="logo">MyShop</h1>
+    <input type="text" placeholder="Cari produk...">
+    <button class="btn-search">Cari</button>
+  </header>
+
+  <!-- Banner -->
+  <section class="banner">
+    <h2>Promo Spesial Hari Ini 🔥</h2>
+    <p>Diskon sampai 70% semua produk</p>
+    <a href="#" class="btn-cta">Belanja Sekarang</a>
+  </section>
+
+  <!-- Kategori -->
+  <section class="kategori">
+    <h2>Kategori Populer</h2>
+    <div class="grid">
+      <div class="card">📱 Elektronik</div>
+      <div class="card">👕 Fashion</div>
+      <div class="card">🏠 Rumah Tangga</div>
+      <div class="card">🎮 Hobi</div>
+    </div>
+  </section>
+
+  <!-- Produk -->
+  <section class="produk">
+    <h2>Produk Rekomendasi</h2>
+    <div class="grid">
+      <div class="produk-card">
+        <img src="https://via.placeholder.com/150" alt="Produk">
+        <p>Produk A</p>
+        <span>Rp99.000</span>
+      </div>
+      <div class="produk-card">
+        <img src="https://via.placeholder.com/150" alt="Produk">
+        <p>Produk B</p>
+        <span>Rp150.000</span>
+      </div>
+      <div class="produk-card">
+        <img src="https://via.placeholder.com/150" alt="Produk">
+        <p>Produk C</p>
+        <span>Rp75.000</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 MyShop - Semua Hak Dilindungi</p>
+  </footer>
+
+</body>
+</html>
