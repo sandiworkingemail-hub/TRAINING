@@ -3,228 +3,548 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bio Link Style</title>
+  <title>LIVEBET303 STORE</title>
   <style>
-    /* Reset & Body */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      color: #fff;
+      background: linear-gradient(to bottom, #a09b00, #000000);
       text-align: center;
-      color: white;
-      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: rgba(0,0,0,0.6);
+      color: yellow;
+    }
+
+    .logo img {
+      height: 50px;
+      display: block;
+    }
+
+    .btn-top {
+      margin-left: 10px;
+      padding: 8px 18px;
+      background: linear-gradient(90deg, #e6e6e6, #c0c0c0);
+      border: 2px solid gold;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+    }
+    .btn-top:hover {
+      background: linear-gradient(90deg, #fefefe, #dcdcdc);
+      box-shadow: 0 0 18px rgba(255, 215, 0, 1);
+    }
+
+    /* Slideshow */
+    .slideshow-container {
       position: relative;
-      height: 100vh;
-      background: #000;
-    }
-
-    /* Gradient Animasi Horizontal */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, #2193b0, #6dd5ed, #fdd835);
-      background-size: 800% 800%;
-      animation: gradientMove 15s ease infinite;
-      z-index: -2;
-    }
-
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* Stars */
-    .stars {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
+      max-width: 100%;
+      margin: 20px auto;
       overflow: hidden;
-      z-index: -1;
+      background: #111;
+      border-radius: 10px;
+    }
+    .mySlides { display: none; }
+    .mySlides img {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    @media (max-width: 600px) {
+      .mySlides img { max-height: 180px; }
     }
 
-    .star {
+    .prev, .next {
+      cursor: pointer;
       position: absolute;
-      background: white;
+      top: 50%;
+      padding: 8px;
+      color: yellow;
+      font-weight: bold;
+      font-size: 24px;
+      user-select: none;
+      text-shadow: 0 0 10px #000;
+      background: rgba(0,0,0,0.4);
       border-radius: 50%;
-      opacity: 0.8;
-      animation: twinkle linear infinite, fall linear infinite;
+      transform: translateY(-50%);
+    }
+    .next { right: 10px; }
+    .prev { left: 10px; }
+
+    .dot-container { text-align: center; margin-top: 8px; }
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .active, .dot:hover { background-color: yellow; box-shadow: 0 0 10px yellow; }
+
+    /* Konten */
+    .content {
+      margin: 20px auto;
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 1200px;
     }
 
-    @keyframes twinkle {
-      0%,100% { opacity: 0.2; }
-      50% { opacity: 1; }
+    .judul-utama {
+      font-size: 40px;
+      font-weight: bold;
+      color: transparent;
+      background: linear-gradient(120deg,#ffff66,#fff200,#7d7900,#fff200,#ffff66,#7d7900);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: shineText 10s linear infinite, zoomText 15s ease-in-out infinite alternate;
+    }
+    @keyframes shineText {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes zoomText {
+      from { transform: scale(1); }
+      to   { transform: scale(1.05); }
     }
 
-    @keyframes fall {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(100vh); }
+    .judul-sub {
+      font-size: 22px;
+      color: yellow;
+      margin-top: 10px;
+      text-shadow: 0 0 10px #000;
     }
 
-    /* Profil */
-    .profile {
-      margin-top: 40px;
+    /* Search Bar Modern */
+    .search-bar {
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      max-width: 500px;
+    }
+    .search-bar input {
+      flex: 1;
+      padding: 12px 15px;
+      font-size: 16px;
+      border: 2px solid gold;
+      border-radius: 30px;
+      outline: none;
+      background: linear-gradient(90deg, #e6e6e6, #c0c0c0);
+      color: black;
+      font-weight: bold;
+      box-shadow: 0 0 12px rgba(255,215,0,0.6);
+      transition: all 0.3s ease;
+    }
+    .search-bar input:focus {
+      box-shadow: 0 0 18px yellow, 0 0 30px rgba(255,255,0,0.8);
+      background: linear-gradient(90deg, #fefefe, #dcdcdc);
+    }
+    .search-bar button {
+      padding: 12px 22px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      background: linear-gradient(90deg, #e6e6e6, #c0c0c0);
+      border: 2px solid gold;
+      color: black;
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+      transition: all 0.3s ease;
+    }
+    .search-bar button:hover {
+      background: linear-gradient(90deg, #fefefe, #dcdcdc);
+      box-shadow: 0 0 18px rgba(255, 215, 0, 1);
+    }
+
+    /* Info User */
+    #user-info {
+      margin-top: 15px;
+      font-size: 22px;
+      color: yellow;
+      font-weight: bold;
+      text-shadow: 0 0 8px #000;
+      border: 2px solid yellow;
+      padding: 10px 15px;
+      display: none;
+      border-radius: 10px;
+      box-shadow: 0 0 15px yellow, 0 0 30px rgba(255,255,0,0.6);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 10px yellow, 0 0 20px rgba(255,255,0,0.5); }
+      to { box-shadow: 0 0 20px yellow, 0 0 40px rgba(255,255,0,0.9); }
+    }
+
+    /* Daftar hadiah */
+    .hadiah-wrapper {
+      margin: 30px auto;
+      max-width: 1150px;
+      border: 4px solid yellow;
+      border-radius: 14px;
+      padding: 20px;
+      animation: borderPulse 2s infinite alternate;
+    }
+    @keyframes borderPulse {
+      0% { box-shadow: 0 0 6px yellow, 0 0 12px rgba(255,255,0,0.5); }
+      100% { box-shadow: 0 0 12px yellow, 0 0 20px rgba(255,255,0,0.8); }
+    }
+
+    .hadiah-wrapper legend {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffff66;
+      padding: 0 15px;
+      border-radius: 8px;
+      text-shadow: 
+        0 0 5px #ffff66,
+        0 0 10px #ff0,
+        0 0 20px #ffd700;
+      animation: neonPulse 1.8s ease-in-out infinite alternate;
+    }
+    @keyframes neonPulse {
+      from {
+        text-shadow: 
+          0 0 5px #ffff66,
+          0 0 10px #ff0,
+          0 0 20px #ffd700;
+      }
+      to {
+        text-shadow: 
+          0 0 15px #ffff66,
+          0 0 25px #ff0,
+          0 0 40px #ffd700;
+      }
+    }
+
+    .hadiah-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      .hadiah-container { gap: 12px; padding: 0 5px; }
+    }
+
+    .hadiah-card {
       position: relative;
-      z-index: 1;
+      background: rgba(34,34,34,0.9);
+      border: 2px solid #444;
+      border-radius: 15px;
+      overflow: hidden;
+      text-align: center;
+      /* pulse glow dimatikan */
     }
-
-    .img-wrapper {
-      width: 120px;
+    .hadiah-card img {
+      width: 100%;
       height: 120px;
-      border-radius: 50%;
-      border: 4px solid #fdd835;
-      background: black;
+      object-fit: cover;
+      display: block;
+    }
+    .badge-poin {
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(253, 216, 53, 0.5);
-      margin: 0 auto;
-    }
-
-    .img-wrapper img {
-      max-width: 90%;
-      max-height: 90%;
-      object-fit: contain;
-    }
-
-    .img-wrapper::after {
-      content: "";
-      position: absolute;
-      width: 140%;
-      height: 140%;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(253,216,53,0.5) 0%, transparent 70%);
-      animation: pulse 2s infinite;
-      top: -20%;
-      left: -20%;
-      z-index: -1;
-    }
-
-    @keyframes pulse {
-      0%,100% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.2); opacity: 1; }
-    }
-
-    .title {
-      margin-top: 15px;
-      font-size: 24px;
+      gap: 5px;
+      background: linear-gradient(90deg, #e6e6e6, #c0c0c0);
+      color: black;
       font-weight: bold;
-      text-shadow: 0 0 10px #fff;
-      color: white;
-    }
-
-    .subtitle {
       font-size: 14px;
-      color: white;
-      text-shadow: 0 0 5px #fff;
+      padding: 8px 14px;
+      border-radius: 0 0 15px 15px;
+      border: 2px solid gold;
+      cursor: pointer;
     }
+    .badge-poin img { width: 18px; height: 18px; }
 
-    /* Tombol */
-    .links {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      padding: 0 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .link-btn {
-      background: linear-gradient(90deg, #2193b0, #6dd5ed, #fdd835);
-      background-size: 400% 400%;
-      color: white;
-      text-decoration: none;
-      padding: 15px;
-      border-radius: 15px;
-      font-weight: bold;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-      transition: 0.3s;
-      position: relative;
-      overflow: hidden;
-      animation: btnGradient 5s ease infinite;
-    }
-
-    .link-btn::before {
+    /* Thin Shine Line */
+    .hadiah-card::after {
       content: "";
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: rgba(255,255,255,0.1);
-      transform: rotate(45deg);
-      transition: 0.5s;
+      top: 0; left: -50%;
+      width: 30%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+      transform: skewX(-25deg);
+      animation: thinShine 10s infinite;
+    }
+    @keyframes thinShine {
+      0%   { left: -50%; }
+      5%   { left: 120%; }
+      100% { left: 120%; }
     }
 
-    .link-btn:hover::before {
-      top: -25%;
-      left: -25%;
+    /* Modal + Popup */
+    .modal, .popup {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+    }
+    .modal-content, .popup-content {
+      background: #222;
+      margin: 15% auto;
+      padding: 20px;
+      border: 2px solid yellow;
+      border-radius: 12px;
+      width: 300px;
+      text-align: center;
+      color: yellow;
+      box-shadow: 0 0 20px yellow;
+      position: relative;
     }
 
-    .link-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #fff, 0 5px 15px rgba(0,0,0,0.3);
+    /* Tombol Tukar & Batal */
+    .modal button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      transition: all 0.3s ease;
     }
+    .btn-yes {
+      background: linear-gradient(90deg, #ffff66, #ffd700);
+      color: #000;
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+    }
+    .btn-no {
+      background: linear-gradient(90deg, #666, #444);
+      color: #fff;
+      box-shadow: 0 0 8px rgba(255,255,255,0.4);
+    }
+    .btn-yes:hover { box-shadow: 0 0 18px yellow; }
+    .btn-no:hover { box-shadow: 0 0 12px #999; }
 
-    @keyframes btnGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .close-popup {
+      position: absolute;
+      top: 5px; right: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      color: red;
+      font-weight: bold;
+    }
+    .wa-button {
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px;
+      background: linear-gradient(90deg, #25D366, #128C7E);
+      color: white; font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 10px;
+      box-shadow: 0 0 10px #25D366;
+    }
+    .wa-button img { width: 20px; height: 20px; }
+
+    .footer {
+      margin-top: 30px;
+      padding: 15px;
+      background: rgba(0,0,0,0.6);
+      color: yellow;
+      font-size: 14px;
     }
   </style>
+  <!-- Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
-  <!-- Bintang animasi -->
-  <div class="stars" id="stars"></div>
-
-  <!-- Profil -->
-  <div class="profile">
-    <div class="img-wrapper">
-      <img src="https://i.ibb.co/Myz9dWVx/2iQqylS.jpg" alt="Logo LIVEBET303">
+  <header>
+    <div class="logo">
+      <a href="https://2livebet303.fit" target="_blank">
+        <img src="https://i.postimg.cc/4xsBj2xD/51-c4b40e8272964431a1c47ec3f92682b0-2.png" alt="LIVEBET303 Logo">
+      </a>
     </div>
-    <div class="title">LIVEBET303 SITUS SLOT GACOR</div>
-    <div class="subtitle">JACKPOT MUDAH & BONUS TANPA BATAS</div>
+    <div>
+      <a href="https://t.me/cslivebet303" target="_blank" class="btn-top">Kontak CS</a>
+      <a href="https://2livebet303.fit/" target="_blank" class="btn-top">Kembali ke Menu Web</a>
+    </div>
+  </header>
+
+  <!-- Slideshow -->
+  <div class="slideshow-container">
+    <div class="mySlides fade"><img src="https://i.postimg.cc/nc2py517/a150f77065a4d5b0a3d2d9525b4d991a.jpg" alt="Promo 1"></div>
+    <div class="mySlides fade"><img src="https://i.postimg.cc/G3YPd094/Promosi-Banner.jpg" alt="Promo 2"></div>
+    <div class="mySlides fade"><img src="https://i.postimg.cc/sg0G5KvF/Promo.jpg" alt="Promo 3"></div>
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
   </div>
 
-  <!-- Tombol Link -->
-  <div class="links">
-    <a href="https://2livebet303.space" class="link-btn">SLOT GACOR</a>
-    <a href="https://cutt.ly/walivebet303" class="link-btn">WHATSAPP OFFICIAL</a>
-    <a href="https://t.me/cslivebet303" class="link-btn">TELEGRAM OFFICIAL</a>
-    <a href="https://t.me/komunitas_livebet303" class="link-btn">KOMUNITAS TELEGRAM LIVEBET303</a>
+  <div class="content">
+    <h2 class="judul-utama">SELAMAT DATANG DI LIVEBET303 STORE</h2>
+    <div class="judul-sub">Tukarkan point eventmu dan ambil hadiahnya langsung</div>
+
+    <!-- Search Bar Modern -->
+    <div class="search-bar">
+      <input type="text" id="userIdInput" placeholder="Masukkan User ID">
+      <button onclick="searchUser()">Cari</button>
+    </div>
+
+    <div id="user-info"></div>
+
+    <fieldset class="hadiah-wrapper">
+      <legend>Daftar Hadiah</legend>
+      <div class="hadiah-container" id="prize-list"></div>
+    </fieldset>
   </div>
+
+  <!-- Modal Konfirmasi -->
+  <div id="confirmModal" class="modal">
+    <div class="modal-content">
+      <p id="confirmText">Yakin ingin menukar hadiah ini?</p>
+      <button class="btn-yes" onclick="confirmRedeem()">Tukar</button>
+      <button class="btn-no" onclick="closeModal()">Batal</button>
+    </div>
+  </div>
+
+  <!-- Popup sukses -->
+  <div id="successPopup" class="popup">
+    <div class="popup-content">
+      <span class="close-popup" onclick="closePopup()">×</span>
+      <p>Penukaran sukses !<br>🎉 Hubungi CS untuk ambil hadiah 🎉</p>
+      <a href="https://cutt.ly/walivebet303" target="_blank" class="wa-button">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WA"> WhatsApp Admin
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">© 2025 LIVEBET303 STORE. All rights reserved.</div>
 
   <script>
-    // Bintang acak
-    const starsContainer = document.getElementById('stars');
-    const numStars = 120;
+    let slideIndex = 0;
+    showSlides();
 
-    for (let i = 0; i < numStars; i++) {
-      const star = document.createElement('div');
-      star.classList.add('star');
-      const size = Math.random() * 3 + 1;
-      star.style.width = size + 'px';
-      star.style.height = size + 'px';
-      star.style.top = Math.random() * 100 + 'vh';
-      star.style.left = Math.random() * 100 + 'vw';
-      star.style.animationDuration = (Math.random() * 5 + 2) + 's';
-      if (Math.random() > 0.7) {
-        star.style.animationName = 'twinkle, fall'; // ada yang jatuh
-      } else {
-        star.style.animationName = 'twinkle'; // cuma kedip
+    function plusSlides(n) { showSlides(slideIndex += n); }
+    function currentSlide(n) { showSlides(slideIndex = n-1); }
+
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n === undefined) { slideIndex++; }
+      if (slideIndex >= slides.length) { slideIndex = 0 }
+      if (slideIndex < 0) { slideIndex = slides.length - 1 }
+
+      for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+      for (let i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+
+      slides[slideIndex].style.display = "block";
+      dots[slideIndex].className += " active";
+
+      setTimeout(showSlides, 5000);
+    }
+
+    let currentUser = { id: "", points: 0 };
+
+    function searchUser() {
+      const userId = document.getElementById("userIdInput").value;
+      if(userId.trim() === "") {
+        alert("Masukkan User ID terlebih dahulu!");
+        return;
       }
-      starsContainer.appendChild(star);
+      const dummyPoints = Math.floor(Math.random() * 2000);
+      currentUser = { id: userId, points: dummyPoints };
+      const userInfo = document.getElementById("user-info");
+      userInfo.style.display = "inline-block";
+      userInfo.innerHTML = `ID: <b>${userId}</b> | Poin: <b>${dummyPoints}</b> 🛒`;
+    }
+
+    document.getElementById("userIdInput").addEventListener("keypress", function(e) {
+      if (e.key === "Enter") { searchUser(); }
+    });
+
+    const hadiahList = [
+      {name:"Hadiah 1", price:200, img:"https://via.placeholder.com/400x225"},
+      {name:"Hadiah 2", price:350, img:"https://via.placeholder.com/400x225"},
+      {name:"Hadiah 3", price:500, img:"https://via.placeholder.com/400x225"},
+      {name:"Hadiah 4", price:800, img:"https://via.placeholder.com/400x225"},
+      {name:"Hadiah 5", price:1000, img:"https://via.placeholder.com/400x225"},
+      {name:"Hadiah 6", price:1200, img:"https://via.placeholder.com/400x225"},
+      {name:"Hadiah 7", price:1500, img:"https://via.placeholder.com/400x225"},
+      {name:"Hadiah 8", price:1800, img:"https://via.placeholder.com/400x225"},
+      {name:"Hadiah 9", price:2000, img:"https://via.placeholder.com/400x225"},
+      {name:"Hadiah 10", price:2500, img:"https://via.placeholder.com/400x225"},
+      {name:"Hadiah 11", price:3000, img:"https://via.placeholder.com/400x225"},
+      {name:"Hadiah 12", price:3500, img:"https://via.placeholder.com/400x225"},
+    ];
+
+    const prizeContainer = document.getElementById("prize-list");
+    hadiahList.forEach(h => {
+      const card = document.createElement("div");
+      card.className = "hadiah-card";
+      card.innerHTML = `
+        <img src="${h.img}" alt="${h.name}">
+        <div class="badge-poin" onclick="openModal('${h.name}')">
+          <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="cart"> ${h.price}
+        </div>
+      `;
+      prizeContainer.appendChild(card);
+    });
+
+    let selectedPrize = "";
+    function openModal(prizeName) {
+      selectedPrize = prizeName;
+      document.getElementById("confirmText").innerText = `Tukar poin dengan ${prizeName}?`;
+      document.getElementById("confirmModal").style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("confirmModal").style.display = "none";
+    }
+    function confirmRedeem() {
+      closeModal();
+      document.getElementById("successPopup").style.display = "block";
+
+      // Efek confetti 🎉
+      var duration = 3 * 1000; // 3 detik
+      var end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 }
+        });
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 }
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      }());
+    }
+    function closePopup() {
+      document.getElementById("successPopup").style.display = "none";
     }
   </script>
-
 </body>
 </html>
